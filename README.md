@@ -20,7 +20,6 @@ A continuación se presenta el diagrama UML del sistema, que describe la estruct
 ![Diagrama UML del Sistema Bancario]
 
 @startuml
-
 ' Define the classes
 class Client {
     - QString id
@@ -30,7 +29,6 @@ class Client {
     + getId() : QString
     + getName() : QString
 }
-
 class Account {
     - QString id
     - double balance
@@ -40,7 +38,6 @@ class Account {
     + getType() : AccountType
     + generateStatement(from : QDate, to : QDate) : QString
 }
-
 class Transaction {
     - double amount
     - TransactionType type
@@ -49,7 +46,6 @@ class Transaction {
     + getType() : TransactionType
     + getDateTime() : QDateTime
 }
-
 class AccountManager {
     - QMap<QString, Account*> accounts
     - QMap<QString, Client*> clients
@@ -60,7 +56,6 @@ class AccountManager {
     + executeTransaction(accountId : QString, amount : double, type : TransactionType) : bool
     + generateStatement(clientId : QString, fromDate : QDate, toDate : QDate, type : AccountType) : QString
 }
-
 class MainWindow {
     - AccountManager accountManager
     - QString currentClientId
@@ -71,13 +66,11 @@ class MainWindow {
     + updateAccountList()
     + showMessage(message : QString)
 }
-
 ' Define relationships
 Client "1" *-- "*" Account : has
 AccountManager "1" *-- "*" Client : manages
 MainWindow "1" --> "1" AccountManager : interacts with
 Account "1" o-- "*" Transaction : processes
-
 @enduml
 
 > **Nota**: El diagrama UML describe las relaciones entre las principales clases del sistema: `Client`, `Account`, `Transaction`, `AccountManager` y `MainWindow`.
