@@ -1,5 +1,5 @@
 # Sistema Bancario - Proyecto de Gestión de Cuentas y Transacciones
-
+![SistemaBancario_EstadodeCuenta](https://github.com/oFrank777/bancoLab09/blob/main/SistemaBancario_EstadodeCuenta.png)
 ## Descripción
 
 El **Sistema Bancario** es una aplicación que permite a los clientes gestionar sus cuentas bancarias, realizar transacciones y consultar estados de cuenta. El sistema permite crear cuentas de diferentes tipos (Ahorro, Joven, Plus, Empresarial, Crédito), realizar depósitos, retiros, transferencias nacionales, compras con tarjeta, y generar estados de cuenta con transacciones realizadas durante un periodo.
