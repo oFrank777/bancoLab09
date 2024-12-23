@@ -17,7 +17,9 @@ Este sistema simula las operaciones básicas de un banco con un enfoque en la ge
 
 A continuación se presenta el diagrama UML del sistema, que describe la estructura de las clases involucradas:
 
-![Diagrama UML del Sistema Bancario]@startuml
+![Diagrama UML del Sistema Bancario]
+
+@startuml
 
 ' Define the classes
 class Client {
