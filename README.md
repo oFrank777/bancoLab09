@@ -17,61 +17,7 @@ Este sistema simula las operaciones básicas de un banco con un enfoque en la ge
 
 A continuación se presenta el diagrama UML del sistema, que describe la estructura de las clases involucradas:
 
-![Diagrama UML del Sistema Bancario]
-
-@startuml
-' Define the classes
-class Client {
-    - QString id
-    - QString name
-    + addAccount(Account* account)
-    + getAccounts() : QList<Account*>
-    + getId() : QString
-    + getName() : QString
-}
-class Account {
-    - QString id
-    - double balance
-    - AccountType accountType
-    + getId() : QString
-    + getBalance() : double
-    + getType() : AccountType
-    + generateStatement(from : QDate, to : QDate) : QString
-}
-class Transaction {
-    - double amount
-    - TransactionType type
-    - QDateTime dateTime
-    + getAmount() : double
-    + getType() : TransactionType
-    + getDateTime() : QDateTime
-}
-class AccountManager {
-    - QMap<QString, Account*> accounts
-    - QMap<QString, Client*> clients
-    - AccountManager instance
-    + getInstance() : AccountManager
-    + createAccount(clientId : QString, type : AccountType)
-    + getClientAccounts(clientId : QString) : QList<Account*>
-    + executeTransaction(accountId : QString, amount : double, type : TransactionType) : bool
-    + generateStatement(clientId : QString, fromDate : QDate, toDate : QDate, type : AccountType) : QString
-}
-class MainWindow {
-    - AccountManager accountManager
-    - QString currentClientId
-    + on_loginButton_clicked()
-    + on_createAccountButton_clicked()
-    + on_executeTransactionButton_clicked()
-    + on_generateStatementButton_clicked()
-    + updateAccountList()
-    + showMessage(message : QString)
-}
-' Define relationships
-Client "1" *-- "*" Account : has
-AccountManager "1" *-- "*" Client : manages
-MainWindow "1" --> "1" AccountManager : interacts with
-Account "1" o-- "*" Transaction : processes
-@enduml
+![Diagrama UML del Sistema Bancario](https://github.com/oFrank777/bancoLab09/blob/main/uml.png)  
 
 > **Nota**: El diagrama UML describe las relaciones entre las principales clases del sistema: `Client`, `Account`, `Transaction`, `AccountManager` y `MainWindow`.
 
