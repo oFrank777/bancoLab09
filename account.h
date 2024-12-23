@@ -30,4 +30,4 @@ private:
     QList<Transaction> transactions;  // Atributo que guarda una lista de transacciones realizadas en la cuenta (de tipo Transaction, que probablemente esté definido en el archivo "transaction.h").
 };
 
-#endif  // Fin de la declaración del encabezado "ACCOUNT_H".
+#endif  // Fin de la declaración del encabezado "ACCOUNT_H"
