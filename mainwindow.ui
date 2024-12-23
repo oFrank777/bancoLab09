@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <!-- Definición de la clase MainWindow. Esta es la ventana principal de la aplicación. -->
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <!-- Establece la geometría de la ventana principal (ancho 800px, alto 600px). -->
+  <property name="windowTitle">
+   <string>Sistema Bancario</string>
+  </property>
+  <!-- El título de la ventana principal es "Sistema Bancario". -->
+
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <!-- TabWidget con 4 pestañas (Login, Cuentas, Transacciones, Estados de Cuenta). La pestaña inicial es la 1 (Cuentas). -->
+
+      <!-- Pestaña de Login -->
+      <widget class="QWidget" name="loginTab">
+       <attribute name="title">
+        <string>Login</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QFormLayout" name="formLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>ID Cliente:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="clientIdInput"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="loginButton">
+          <property name="text">
+           <string>Iniciar Sesión</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- Pestaña de Cuentas -->
+      <widget class="QWidget" name="accountsTab">
+       <attribute name="title">
+        <string>Cuentas</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QComboBox" name="accountTypeCombo"/>
+         <!-- ComboBox para seleccionar el tipo de cuenta (Ahorro, Joven, Plus, Empresarial, Crédito). -->
+        </item>
+        <item>
+         <widget class="QPushButton" name="createAccountButton">
+          <property name="text">
+           <string>Crear Nueva Cuenta</string>
+          </property>
+         </widget>
+         <!-- Botón para crear una nueva cuenta. -->
+        </item>
+        <item>
+         <widget class="QListWidget" name="accountsList"/>
+         <!-- Lista para mostrar las cuentas del cliente. -->
+        </item>
+       </layout>
+      </widget>
+
+      <!-- Pestaña de Transacciones -->
+      <widget class="QWidget" name="transactionsTab">
+       <attribute name="title">
+        <string>Transacciones</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <layout class="QFormLayout" name="formLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Cuenta:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="transactionAccountCombo"/>
+           <!-- ComboBox para seleccionar la cuenta en la que se realizará la transacción. -->
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Tipo:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="transactionTypeCombo"/>
+           <!-- ComboBox para seleccionar el tipo de transacción (Depósito, Retiro, Préstamo, etc.). -->
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Monto:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QDoubleSpinBox" name="amountSpinBox">
+            <property name="maximum">
+             <double>1000000.000000000000000</double>
+            </property>
+           </widget>
+           <!-- SpinBox para ingresar el monto de la transacción, con un valor máximo de $1,000,000. -->
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="executeTransactionButton">
+          <property name="text">
+           <string>Ejecutar Transacción</string>
+          </property>
+         </widget>
+         <!-- Botón para ejecutar la transacción. -->
+        </item>
+       </layout>
+      </widget>
+
+      <!-- Pestaña de Estados de Cuenta -->
+      <widget class="QWidget" name="statementsTab">
+       <attribute name="title">
+        <string>Estados de Cuenta</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <layout class="QFormLayout" name="formLayout_3">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Desde:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QDateEdit" name="fromDateEdit"/>
+           <!-- Selector de fecha para el inicio del periodo del estado de cuenta. -->
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>Hasta:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QDateEdit" name="toDateEdit"/>
+           <!-- Selector de fecha para el final del periodo del estado de cuenta. -->
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Tipo de Cuenta:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="statementAccountTypeCombo"/>
+           <!-- ComboBox para seleccionar el tipo de cuenta para el estado de cuenta. -->
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="generateStatementButton">
+          <property name="text">
+           <string>Generar Estado de Cuenta</string>
+          </property>
+         </widget>
+         <!-- Botón para generar el estado de cuenta. -->
+        </item>
+        <item>
+         <widget class="QTextEdit" name="statementText">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <!-- Área de texto solo lectura para mostrar el estado de cuenta generado. -->
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+
+  <widget class="QStatusBar" name="statusbar"/>
+  <!-- Barra de estado en la parte inferior de la ventana para mostrar mensajes. -->
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
